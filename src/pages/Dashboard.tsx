@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Plus, Package, Truck, Clock, CheckCircle, Search } from 'lucide-react';
+import { Plus, Package, Clock, CheckCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabase';
 
@@ -18,7 +18,7 @@ interface Shipment {
   created_at: string;
 }
 
-export default function Dashboard({ onNavigate }: DashboardProps) {
+export default function Dashboard() {
   const { user } = useAuth();
   const [shipments, setShipments] = useState<Shipment[]>([]);
   const [loading, setLoading] = useState(true);
@@ -276,7 +276,7 @@ function CreateShipmentModal({ onClose, onSuccess, userId }: CreateShipmentModal
     setError('');
 
     try {
-      const { data: customerData, error: customerError } = await supabase
+      const { data: customerData } = await supabase
         .from('customers')
         .select('id')
         .eq('user_id', userId)

@@ -1,4 +1,4 @@
-import { Truck, Clock, Shield, Globe, Package, Zap } from 'lucide-react';
+import { Clock, Shield, Package, Zap } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (page: string) => void;

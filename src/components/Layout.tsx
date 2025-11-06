@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Package, Menu, X, LogOut } from 'lucide-react';
+import { Package, Menu, X, LogOut, User } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 
